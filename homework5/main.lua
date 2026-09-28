@@ -1,7 +1,7 @@
 require("L5")
 
 function setup()
-  size(400, 800)
+  size(800, 400)
 
   -- Set the program title
   windowTitle("Basic sketch")

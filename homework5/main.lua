@@ -1,7 +1,7 @@
 require("L5")
 
 function setup()
-  size(800, 600)
+  size(650, 400)
 
   -- Set the program title
   windowTitle("Cityscape Nighttime")
@@ -36,9 +36,20 @@ function draw()
   line(650,0,650,400)
   line(700,0,700,400)
   line(750,0,750,400)
+  --moon
+  fill(193,189,114)
+  ellipse(width/2,height/1,700)
   --building1
+  fill(64,4,78)
   strokeWeight(3)
-  rect(0,275,100,175)
-  rect(175,125,200,300)
-  rect(100,225,150,175)
+  rect(width/650,height/1.45,width/6.5,height/2.5)
+  rect(width/3.7,height/4,width/3.25,height/1)
+  rect(width/6.5,height/1.8,width/5.2,height/2)
+  rect(325,175,width/5.2,height/1.5)
+  rect(525,150,width/3.75,height/1)
+  rect(450,225,width/6.5,height/2)
+  --windows
+  fill(193,189,114)
+  strokeWeight(1.5)
+
 end

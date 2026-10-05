@@ -2,6 +2,7 @@ require("L5")
 
 function setup()
   size(650, 400)
+  rectMode(CENTER)
 
   -- Set the program title
   windowTitle("Cityscape Nighttime")
@@ -37,19 +38,34 @@ function draw()
   line(700,0,700,400)
   line(750,0,750,400)
   --moon
+  if mouseY < 200 then
+  fill(255,0,0)
+else
   fill(193,189,114)
+end
   ellipse(width/2,height/1,700)
   --building1
   fill(64,4,78)
   strokeWeight(3)
-  rect(width/650,height/1.45,width/6.5,height/2.5)
-  rect(width/3.7,height/4,width/3.25,height/1)
-  rect(width/6.5,height/1.8,width/5.2,height/2)
-  rect(325,175,width/5.2,height/1.5)
-  rect(525,150,width/3.75,height/1)
-  rect(450,225,width/6.5,height/2)
-  --windows
-  fill(193,189,114)
-  strokeWeight(1.5)
+  rect(width/12.75,height/1.1255,width/6.5,height/2.5)
+  rect(width/2.358,height*0.75,width/3.25,height/1)
+  rect(width/4,height/1.2414,width/5.2,height/2)
+  rect(width/1.677,height/1.3,width/5.2,height/1.5)
+  rect(width/1.1,height*0.875,width/3.75,height/1)
+  rect(width/1.3,height*0.8125,width/6.5,height/2)
+
+  --follow thingy
+beginShape();
+fill(255,216,0)
+translate(mouseX,mouseY)
+rect(0,0,100,50)
+fill(0,0,0)
+ellipse(35,25,35,35)
+ellipse(-35,25,35,35)
+fill(228,205,158)
+rect(0,-20,100,5)
+fill(255,255,255)
+ellipse(50,0,15,15)
+endShape();
 
 end

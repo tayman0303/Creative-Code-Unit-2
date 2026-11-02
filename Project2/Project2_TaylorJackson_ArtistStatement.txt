@@ -1,0 +1,3 @@
+Artist Statement Project 2
+
+for this project I really wanted to play into old timey carpets. I really love how they always have such differing designs so I played into that with this project. I just added simple shapes and colors that change on click. If you use the key S you can even save an image of the carpet you're looking at! This was hugely inspired by HomeGoods carpet shopping. I took the color scheme from a carpet image that will be included in the repository for this, but I based my color way on that carpet!

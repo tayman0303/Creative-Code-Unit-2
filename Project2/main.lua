@@ -1,29 +1,40 @@
 --carpetBgColor
-risoPinkR = 255
-risoPinkG = 72
-risoPinkB = 176
+redR = 185
+redG = 35
+redB = 40
 
 --cool color
-risoYellowR = 255
-risoYellowG = 232
-risoYellowB = 0
+goldR = 235
+goldG = 190
+goldB = 50
+
+whiteR = 225
+whiteG = 225
+whiteB = 225
+
+blueR = 50
+blueG = 150
+blueB = 200
+
+--boring colorz
+navyR = 35
+navyG = 50
+navyB = 160
+
+greenR = 50
+greenG = 140
+greenB = 70
 
 --alphaz
-patternAlpha1 = 60
-patternAlpha2 = 120
-patternAlpha3 = 180
-patternAlpha4 = 240
-
-coolAlpha = {patternAlpha3,patternAlpha4}
-boringAlpha = {patternAlpha2,patternAlpha4}
+alphaOptions = {200,230,255}
 
 --shapez
 coolShapes = {"circle","square","diamond"}
 boringShapes = {"dot","line"}
 
 --colorz
-coolColors = {"yellow","paper"}
-boringColors = {"pink","yellow"}
+coolColors = {"gold","white","blue"}
+boringColors = {"navy","green"}
 
 --sizes
 sizeOptions = {0.15,0.2,0.25,0.3,0.35}
@@ -36,9 +47,9 @@ function setup()
   angleMode(DEGREES)
   rectMode(CENTER)
   noStroke()
-  windowTitle("Carpet Shopping - Print")
+  windowTitle("Carpet Shopping - Computer Colors")
 
-  describe('A riso pink carpet with yellow, pink and paper shapes')
+  describe('A carpet you as the user picked with new colors!')
 
   printStep = 0
   gridSize = 50
@@ -47,6 +58,10 @@ function setup()
 end
 
 function draw()
+  --this makes the carpet change every 2 seconds (the user can still click to change faster)
+  if frameCount%120 == 0 then
+    newCarpet()
+  end
 end
 
 function mousePressed()
@@ -58,7 +73,7 @@ function newCarpet()
   background(255)
 
   -- carpet base
-  fill(risoPinkR,risoPinkG,risoPinkB,patternAlpha3)
+  fill(redR,redG,redB,255)
   rect(300,300,400,500)
 
   -- carpet fringe 
@@ -75,17 +90,23 @@ end
 
 -- gives a shape its color
 function setFill(colorName, a)
-  if colorName == "pink" then
-    fill(risoPinkR,risoPinkG,risoPinkB,a)
-  elseif colorName == "yellow" then
-    fill(risoYellowR,risoYellowG,risoYellowB,a)
+  if colorName == "gold" then
+    fill(goldR,goldG,goldB,a)
+  elseif colorName == "white" then
+    fill(whiteR,whiteG,whiteB,a)
+  elseif colorName == "blue" then
+    fill(blueR,blueG,blueB,a)
+  elseif colorName == "navy" then
+    fill(navyR,navyG,navyB,a)
+  elseif colorName == "green" then
+    fill(greenR,greenG,greenB,a)
   else
     fill(255)
   end
 end
 
 --makes the grid pattern
-function gridGen() 
+function gridGen()
   x = 125
   y = 75
   row = 0
@@ -95,12 +116,11 @@ function gridGen()
     if (row + col) % 2 == 0 then
       graphicShape = random(coolShapes)
       graphicColor = random(coolColors)
-      graphicAlpha = random(coolAlpha)
     else
       graphicShape = random(boringShapes)
       graphicColor = random(boringColors)
-      graphicAlpha = random(boringAlpha)
     end
+    graphicAlpha = random(alphaOptions)
 
     graphicSize = random(sizeOptions)
     setFill(graphicColor, graphicAlpha)
@@ -117,6 +137,7 @@ function gridGen()
   end
 end
 
+--extra shape crap here
 function drawShape(shapeName, x, y, s)
   if shapeName == "circle" then
     shapeCircle(x,y,s)

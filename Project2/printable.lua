@@ -38,7 +38,7 @@ function setup()
   noStroke()
   windowTitle("Carpet Shopping - Print")
 
-  describe('A riso pink carpet with yellow, pink and paper shapes')
+  describe('A carpet you as the user picked with RISO colors!')
 
   printStep = 0
   gridSize = 50
@@ -85,7 +85,7 @@ function setFill(colorName, a)
 end
 
 --makes the grid pattern
-function gridGen() 
+function gridGen()
   x = 125
   y = 75
   row = 0
@@ -171,4 +171,10 @@ function shapeLine(x,y,s)
   scale(s)
   rect(0,0,100,12)
   pop()
+end
+
+function keyPressed()
+  if key == 's' then
+    save('carpet_shopping.png')
+  end
 end

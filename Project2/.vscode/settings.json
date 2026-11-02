@@ -1,0 +1,25 @@
+{
+    "Lua.diagnostics.globals": [
+        "draw",
+        "mousePressed",
+        "printStep",
+        "risoPinkR",
+        "risoPinkG",
+        "risoPinkB",
+        "risoYellowR",
+        "risoYellowG",
+        "risoYellowB",
+        "patternAlpha1",
+        "patternAlpha2",
+        "patternAlpha3",
+        "patternAlpha4",
+        "keyPressed",
+        "shapeDot",
+        "coolAlpha",
+        "boringAlpha",
+        "coolShapes",
+        "boringShapes",
+        "coolColors",
+        "boringColors"
+    ]
+}
